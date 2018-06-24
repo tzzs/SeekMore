@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="book" />
-        <module name="zhihu" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="zhihu" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
