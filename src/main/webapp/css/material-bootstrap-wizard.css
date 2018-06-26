@@ -185,7 +185,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 .wizard-container {
-    padding-top: 50px;
+    padding-top: 40px;
     z-index: 3;
 }
 

@@ -6,12 +6,14 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @author tzz
+ * @Package com.zhihu.book.dao.impl
+ * @Name UserDaoImpl
  */
 @Repository
+
 public class UserDaoImpl implements UserDao {
 
     @Resource
@@ -23,42 +25,5 @@ public class UserDaoImpl implements UserDao {
         return sessionFactory.getCurrentSession().createQuery(hql, User.class).setParameter("userName", userName).setParameter("userPassword", userPassword).uniqueResult();
     }
 
-    @Override
-    public User findByName(String userName) {
-        String hql = "from User u where u.userName=:userName";
-        return sessionFactory.getCurrentSession().createQuery(hql, User.class).setParameter("userName", userName).uniqueResult();
-    }
 
-    @Override
-    public List<User> findAll() {
-        String hql = "from User u order by u.userName";
-        return sessionFactory.getCurrentSession().createQuery(hql, User.class).getResultList();
-    }
-
-    @Override
-    public List<User> findByLike(String userName) {
-        String hql = "from User u where u.userName like :userName order by u.id";
-        return sessionFactory.getCurrentSession().createQuery(hql, User.class).setParameter("userName", "%" + userName + "%").getResultList();
-    }
-
-    @Override
-    public User findById(String id) {
-        String hql = "from User u where u.id=:id";
-        return sessionFactory.getCurrentSession().createQuery(hql, User.class).setParameter("id", id).uniqueResult();
-    }
-
-    @Override
-    public void delete(User user) {
-        sessionFactory.getCurrentSession().delete(user);
-    }
-
-    @Override
-    public void addUser(User user) {
-        sessionFactory.getCurrentSession().persist(user);
-    }
-
-    @Override
-    public void update(User user) {
-        sessionFactory.getCurrentSession().merge(user);
-    }
 }
