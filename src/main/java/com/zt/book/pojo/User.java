@@ -1,18 +1,13 @@
 package com.zt.book.pojo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * 用户实体类
  *
- * @author tzz
- * @className:User
- *
- */
+ *@author THY
+ *@create 2018/6/25
+ **/
 @Entity
 @Table(name = "user")
 public class User implements Serializable {
@@ -23,17 +18,29 @@ public class User implements Serializable {
     @Column(length = 11)
     private String id;
 
-    @Column(length = 20)
-    private String userName;
+    @OneToMany
+    @JoinColumn(name = "userInfo_id")
+    private String userInfo;
 
-    @Column(length = 50)
-    private String userPassword;
+    @OneToMany
+    @JoinColumn(name = "collect_id")
+    private String collect;
 
-    @Column(length = 11)
-    private String phone;
+    @OneToMany
+    @JoinColumn(name = "answer_id")
+    private String answer;
 
-    @Column(length = 20)
-    private String email;
+    @OneToMany
+    @JoinColumn(name = "question_id")
+    private String question;
+
+    @OneToMany
+    @JoinColumn(name = "publish_id")
+    private String publish;
+
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private String receive;
 
     public String getId() {
         return id;
@@ -43,46 +50,52 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUserInfo() {
+        return userInfo;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserInfo(String userInfo) {
+        this.userInfo = userInfo;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getCollect() {
+        return collect;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setCollect(String collect) {
+        this.collect = collect;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getAnswer() {
+        return answer;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 
-    public String getEmail() {
-        return email;
+    public String getQuestion() {
+        return question;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", userName='" + userName + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public String getPublish() {
+        return publish;
+    }
+
+    public void setPublish(String publish) {
+        this.publish = publish;
+    }
+
+    public String getReceive() {
+        return receive;
+    }
+
+    public void setReceive(String receive) {
+        this.receive = receive;
     }
 }
+
