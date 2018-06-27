@@ -1,21 +1,25 @@
 function load() {
     $.ajax({
-        url: "/questions/findAll",
+        url: "/answers/findAll",
         type: "post",
         async: false,
         success: function (data) {
 
             for (d in data) {
+                var index = d % 4;//列数
                 var html = "<div class=\"item\">\n" +
-                    "          <div class=\"animate-box\">\n" +
+                    "          <div class=\"animate-box  bounceIn animated\">\n" +
                     "            <a href=\"../images/img_1.jpg\" class=\"image-popup fh5co-board-img\"\n" +
                     "               title=\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?\"><img\n" +
                     "                    src=\"../images/img_1.jpg\" alt=\"Free HTML5 Bootstrap template\"></a>\n" +
-                    "            <div class=\"fh5co-desc\"><a href=\"\">" + data[d].aContent +
+                    "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"\">" + data[d].aContent +
                     "              </a></div>\n" +
                     "          </div>\n" +
                     "        </div>";
-                document.getElementById("items").insertAdjacentHTML("beforeend", html);
+                // console.log(html);
+                // console.log(index);
+                console.log($("#fh5co-board").children());
+                $("#fh5co-board div")[index].insertAdjacentHTML("beforeend", html);
             }
         }
     })

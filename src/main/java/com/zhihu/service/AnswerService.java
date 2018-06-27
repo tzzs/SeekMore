@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface AnswerService {
 
-
     List<Answer> findAll();
 }

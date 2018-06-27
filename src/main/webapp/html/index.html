@@ -29,6 +29,8 @@
   <meta name="twitter:url" content=""/>
   <meta name="twitter:card" content=""/>
 
+  <script src="../js/index.js"></script>
+
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <link rel="shortcut icon" href="../icons/搜索.svg">
 
@@ -57,7 +59,6 @@
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <script src="../js/index.js"></script>
 
   <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 
@@ -190,6 +191,7 @@
 
       <!--主要问题部分-->
       <div id="fh5co-board" data-columns>
+
         <div class="item">
           <div class="animate-box">
             <a href="../images/img_1.jpg" class="image-popup fh5co-board-img"
@@ -227,7 +229,8 @@
           <div class="animate-box">
             <a href="../images/img_5.jpg" class="image-popup fh5co-board-img"><img src="../images/img_5.jpg"
                                                                                    alt="Free HTML5 Bootstrap template"></a>
-            <div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
+            <div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi
+              animi.</div>
           </div>
         </div>
         <div class="item">
@@ -438,55 +441,103 @@
         </div>
 
 
-        <!--右边部分-->
-        <div class="right-card">
-          <!--card-->
-          <div class="list-card">
-            <ul class="list-group">
-              <a href="" class="list-group-item"><img src="../icons/收藏.svg" alt="" class="card-icon"><span
-                      class="badge">14</span> 我的收藏</a>
-              <a href="" class="list-group-item"><img src="../icons/常见问题.svg" alt="" class="card-icon"><span
-                      class="badge">14</span>
-                我关注的问题</a>
-              <a href="" class="list-group-item"><img src="../icons/信息.svg" alt="" class="card-icon" height="20px"
-                                                      width="20px"><span> 社区服务中心</span></a>
-              <a href="" class="list-group-item"><img src="../icons/版权.svg" alt=""
-                                                      class="card-icon"><span> 版权服务中心</span></a>
-              <a href="" class="list-group-item"><img src="../icons/编辑.svg" alt=""
-                                                      class="card-icon"><span> 公共编辑动态</span></a>
-            </ul>
-          </div>
-          <!--右侧页脚-->
-          <footer class="card-footer">
-            <a href="">Seek 猫</a>
-            <span>·</span>
-            <a href="">千寻指南</a>
-            <span>·</span>
-            <a href="">千寻协议</a>
-            <span>·</span>
-            <a href="">隐私政策</a>
-            <br>
-            <a href="">应用</a>
-            <span>·</span>
-            <a href="">工作</a>
-            <span>·</span>
-            <a href="">申请开通千寻机构号</a>
-            <br>
-            <a href="">侵权举报</a>
-            <span>·</span>
-            <a href="">网上有害信息举报专区</a>
-            <br>
-            <span>违法和不良信息举报：010-82716601</span>
-            <br>
-            <a href="">儿童色情信息举报专区</a>
-            <br>
-            <a href="">联系我们</a>
-            <span>&copy;2018 千寻</span>
+        <!--&lt;!&ndash;右边部分&ndash;&gt;-->
+        <!--<div class="right-card">-->
+        <!--&lt;!&ndash;card&ndash;&gt;-->
+        <!--<div class="list-card">-->
+        <!--<ul class="list-group">-->
+        <!--<a href="" class="list-group-item"><img src="../icons/收藏.svg" alt="" class="card-icon"><span-->
+        <!--class="badge">14</span> 我的收藏</a>-->
+        <!--<a href="" class="list-group-item"><img src="../icons/常见问题.svg" alt="" class="card-icon"><span-->
+        <!--class="badge">14</span>-->
+        <!--我关注的问题</a>-->
+        <!--<a href="" class="list-group-item"><img src="../icons/信息.svg" alt="" class="card-icon" height="20px"-->
+        <!--width="20px"><span> 社区服务中心</span></a>-->
+        <!--<a href="" class="list-group-item"><img src="../icons/版权.svg" alt=""-->
+        <!--class="card-icon"><span> 版权服务中心</span></a>-->
+        <!--<a href="" class="list-group-item"><img src="../icons/编辑.svg" alt=""-->
+        <!--class="card-icon"><span> 公共编辑动态</span></a>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;右侧页脚&ndash;&gt;-->
+        <!--<footer class="card-footer">-->
+        <!--<a href="">Seek 猫</a>-->
+        <!--<span>·</span>-->
+        <!--<a href="">千寻指南</a>-->
+        <!--<span>·</span>-->
+        <!--<a href="">千寻协议</a>-->
+        <!--<span>·</span>-->
+        <!--<a href="">隐私政策</a>-->
+        <!--<br>-->
+        <!--<a href="">应用</a>-->
+        <!--<span>·</span>-->
+        <!--<a href="">工作</a>-->
+        <!--<span>·</span>-->
+        <!--<a href="">申请开通千寻机构号</a>-->
+        <!--<br>-->
+        <!--<a href="">侵权举报</a>-->
+        <!--<span>·</span>-->
+        <!--<a href="">网上有害信息举报专区</a>-->
+        <!--<br>-->
+        <!--<span>违法和不良信息举报：010-82716601</span>-->
+        <!--<br>-->
+        <!--<a href="">儿童色情信息举报专区</a>-->
+        <!--<br>-->
+        <!--<a href="">联系我们</a>-->
+        <!--<span>&copy;2018 千寻</span>-->
 
-          </footer>
+        <!--</footer>-->
 
-        </div>
+        <!--</div>-->
       </div>
+    </div>
+
+    <!--右边部分-->
+    <div class="right-card">
+      <div class="list-card">
+        <ul class="list-group">
+          <a href="" class="list-group-item"><img src="../icons/收藏.svg" alt="" class="card-icon"><span
+                  class="badge">14</span> 我的收藏</a>
+          <a href="" class="list-group-item"><img src="../icons/常见问题.svg" alt="" class="card-icon"><span class="badge">14</span>
+            我关注的问题</a>
+          <a href="" class="list-group-item"><img src="../icons/信息.svg" alt="" class="card-icon" height="20px"
+                                                  width="20px"><span> 社区服务中心</span></a>
+          <a href="" class="list-group-item"><img src="../icons/版权.svg" alt=""
+                                                  class="card-icon"><span> 版权服务中心</span></a>
+          <a href="" class="list-group-item"><img src="../icons/编辑.svg" alt=""
+                                                  class="card-icon"><span> 公共编辑动态</span></a>
+        </ul>
+      </div>
+
+      <!--右侧信息-->
+      <footer class="card-footer">
+        <a href="">Seek 猫</a>
+        <span>·</span>
+        <a href="">千寻指南</a>
+        <span>·</span>
+        <a href="">千寻协议</a>
+        <span>·</span>
+        <a href="">隐私政策</a>
+        <br>
+        <a href="">应用</a>
+        <span>·</span>
+        <a href="">工作</a>
+        <span>·</span>
+        <a href="">申请开通千寻机构号</a>
+        <br>
+        <a href="">侵权举报</a>
+        <span>·</span>
+        <a href="">网上有害信息举报专区</a>
+        <br>
+        <span>违法和不良信息举报：010-82716601</span>
+        <br>
+        <a href="">儿童色情信息举报专区</a>
+        <br>
+        <a href="">联系我们</a>
+        <span>&copy;2018 千寻</span>
+
+      </footer>
+
     </div>
 
     <!--页脚-->
