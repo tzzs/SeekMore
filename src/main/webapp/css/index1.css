@@ -1,0 +1,217 @@
+.header {
+    position: absolute;
+    top: 8px;
+    left: 100px;
+    right: 100px;
+    bottom: 8px;
+    border-radius: 5px;
+    box-shadow: black;
+    background-color: white;
+}
+
+.left {
+    left: 100px;
+    margin-left: 100px;
+}
+
+.header-img {
+    margin-right: 40px;
+}
+
+.header-nav {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.right-40 {
+    margin-right: 40px;
+}
+
+.lr {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card-icon {
+    height: 16px;
+    width: 16px;
+}
+
+.card-title {
+    float: left;
+    padding: 15px 15px;
+    font-size: 16px;
+    line-height: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.a-title:hover, .a-title:visited, .a-title:link, .a-title:active {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    color: #333;
+}
+
+.right-card {
+    position: fixed;
+    left: 955px;
+    float: left;
+    width: 20%;
+    border-radius: 5px;
+}
+
+.list-card {
+    border-radius: 5px;
+    background-color: rgba(125, 232, 183, 0.41);
+}
+
+.list-card > ul > li {
+    height: 40px;
+}
+
+.list-card > ul > li:hover {
+    background: #f6f6f6;
+}
+
+.card-footer {
+    font-size: 13px;
+    line-height: 2;
+    color: #8590a6;
+}
+
+/* 提问弹窗 */
+.box-pwd {
+    max-width: 45%;
+    height: 80%;
+    background: whitesmoke;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0 0 100px #333333;
+    z-index: 99;
+    border-radius: 4px;
+    display: none;
+}
+
+.box-shadow {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.36);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;
+    /*  */
+    z-index: 98;
+}
+
+.box-th {
+    width: 70%;
+    margin-top: 4%;
+    margin-left: 15%;
+    margin-bottom: 12px;
+    height: 40px;
+    background: #e3e8ee;
+}
+
+.box-th p {
+    width: 25%;
+    height: 100%;
+    color: cornflowerblue;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+}
+
+.box-th input {
+    font-size: 14px;
+    line-height: 1.7;
+    border: none;
+    width: 100%;
+    height: 100%;
+    /*outline: none;*/
+    float: left;
+    text-align: center;
+    background: #e3e8ee;
+    /*border: 1px solid rgb(206, 198, 198);*/
+    border-radius: 2px;
+}
+
+.close {
+    float: right;
+    border: none;
+    font-size: 12px;
+    width: 60px;
+    background: yellowgreen;
+    padding: 3px;
+}
+
+#id-p {
+    display: none;
+}
+
+#id {
+    display: none;
+}
+
+.close-box {
+    float: right;
+    margin-right: 10px;
+    border: none;
+    font-size: 12px;
+    border-radius: 15px;
+    /*width: 60px;*/
+    /*background: white;*/
+    /*color: white;*/
+    padding: 3px;
+}
+.title-th{
+    height: 80px;
+}
+.q-title{
+    height: 100%;
+    width: 100%;
+    background: #e3e8ee;
+    border-radius: 5px;
+    border: rgba(210, 203, 210, 0.78);
+}
+
+
+.pswd {
+    display: none;
+}
+
+.pwd {
+    text-align: center;
+}
+
+.info-pwd {
+    text-align: center;
+}
+
+.submit {
+    width: 70%;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 15%;
+    border: none;
+    background: rgb(220, 140, 151);
+    color: white;
+}

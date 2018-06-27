@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hydrogen &mdash; A free HTML5 Template </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free HTML5 Template by FREEHTML5.CO"/>
+  <meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"/>
+  <meta name="author" content="FREEHTML5.CO"/>
+
+  <!-- Facebook and Twitter integration -->
+  <meta property="og:title" content=""/>
+  <meta property="og:image" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:site_name" content=""/>
+  <meta property="og:description" content=""/>
+  <meta name="twitter:title" content=""/>
+  <meta name="twitter:image" content=""/>
+  <meta name="twitter:url" content=""/>
+  <meta name="twitter:card" content=""/>
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="shortcut icon" href="../icons/搜索.svg">
+
+  <!-- Google Webfonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="../css/animate1.css">
+  <!-- Icomoon Icon Fonts-->
+  <link rel="stylesheet" href="../css/icomoon1.css">
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" href="../css/magnific-popup1.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../css/salvattore1.css">
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="../css/styleIndex1.css">
+  <!-- Modernizr JS -->
+  <script src="../js/modernizr-2.6.2.min.js"></script>
+  <!-- FOR IE9 below -->
+  <!--[if lt IE 9]>
+  <script src="../js/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="../css/index1.css">
+
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <script src="../js/index.js"></script>
+
+  <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+
+  <script>
+
+
+      $("#close").click(function () {
+          $(".box-pwd").css({
+              "display": "none"
+          });
+
+          $(".box-shadow").css({
+              "display": "none"
+          });
+
+          /* 清空残留数据 */
+          $("#id").val("");
+          $("#title").val("");
+          $("#topic").val("");
+          $("#des").val("");
+          // $(".submit").removeClass("add_submit").removeClass("add-question");
+          $("#form").attr("action", "#");
+      });
+  </script>
+</head>
+
+<body>
+<!--begin-->
+
+<div id="fh5co-offcanvass">
+  <a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
+  <h1 class="fh5co-logo"><a class="navbar-brand" href="index.html">Hydrogen</a></h1>
+  <ul>
+    <li class="active"><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <h3 class="fh5co-lead">Connect with us</h3>
+  <p class="fh5co-social-icons">
+    <a href="#"><i class="icon-twitter"></i></a>
+    <a href="#"><i class="icon-facebook"></i></a>
+    <a href="#"><i class="icon-instagram"></i></a>
+    <a href="#"><i class="icon-dribbble"></i></a>
+    <a href="#"><i class="icon-youtube"></i></a>
+  </p>
+</div>
+
+<!--头部-->
+<div class="header ">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="header-nav">
+
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header left">
+          <a class="navbar-brand" href="#"><strong>Seek More</strong></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active lr"><a href="index.html">首页 <span class="sr-only">(current)</span></a></li>
+            <li class="lr"><a href="index.html" onclick="">发现</a></li>
+            <li class="lr"><a href="index.html">话题</a></li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group right-40">
+              <input type="text" class="form-control" placeholder="搜索你感兴趣的内容">
+              <button type="submit" class="btn btn-default">
+                <img src="../icons/搜索.svg" alt="搜索" height="20px" width="20px">
+              </button>
+            </div>
+            <button type="submit" class="btn btn-primary"><a href="../editor/examples/editor.html" style="color: white;"
+                                                             class="">提问</a></button>
+          </form>
+
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <a class="navbar-brand header-img" href="#">
+              <img alt="Brand" class="img-rounded" src="../icons/通知.svg" height="20px" width="20px">
+            </a>
+
+            <!--<a class="navbar-brand header-img" href="#">-->
+            <!--<img alt="Brand" class="img-rounded" src="../images/img_2.jpg" height="25px" width="30px">-->
+            <!--</a>-->
+
+            <li class="dropdown">
+              <a class="dropdown-toggle header-img" href="#" data-toggle="dropdown" aria-haspopup="true">
+                <img alt="Brand" class="img-rounded" id="userIcon" src="../images/img_2.jpg" height="25px" width="30px">
+              </a>
+              <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
+              <!--aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+              <ul class="dropdown-menu">
+                <li><a href="#">我的主页</a></li>
+                <li><a href="#">设置</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">退出</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </div>
+  </nav>
+</div>
+
+<!--主题部分-->
+<div id="fh5co-main">
+  <div class="container">
+
+    <!--左边部分 -->
+    <!--修改为80%宽度-->
+    <div class="row">
+      <!--左侧上方导航-->
+      <div class="card">
+        <nav class="navbar navbar-default ">
+
+
+          <a href="" class="card-title a-title" onclick="open()"><img src="../icons/常见问题.svg" class="card-icon" alt="">
+            提问</a>
+          <a href="" class="card-title a-title"><img src="../icons/查看回答.svg" class="card-icon" alt=""> 回答</a>
+          <a href="" class="card-title a-title"><img src="../icons/填写日报.svg" class="card-icon" alt=""> 写文章</a>
+          <a href="" class="card-title a-title"><img src="../icons/想法.svg" class="card-icon" alt=""> 写想法</a>
+          <a href="" class="card-title a-title"></a>
+        </nav>
+      </div>
+
+      <!--主要问题部分-->
+      <div id="fh5co-board" data-columns>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_1.jpg" class="image-popup fh5co-board-img"
+               title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img
+                    src="../images/img_1.jpg" alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc"><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
+              eos?</a></div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_2.jpg" class="image-popup fh5co-board-img"><img src="../images/img_2.jpg"
+                                                                                   alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Veniam voluptatum voluptas tempora debitis harum totam vitae hic quos.</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_3.jpg" class="image-popup fh5co-board-img"><img src="../images/img_3.jpg"
+                                                                                   alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Optio commodi quod vitae, vel, officiis similique quaerat odit dicta.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_4.jpg" class="image-popup fh5co-board-img"><img src="../images/img_4.jpg"
+                                                                                   alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Dolore itaque deserunt sit, at exercitationem delectus, consequuntur quaerat
+              sapiente.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_5.jpg" class="image-popup fh5co-board-img"><img src="../images/img_5.jpg"
+                                                                                   alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Tempora distinctio inventore, nisi excepturi pariatur tempore sit quasi animi.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_6.jpg" class="image-popup fh5co-board-img"><img src="../images/img_6.jpg"
+                                                                                   alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Sequi, eaque suscipit accusamus. Necessitatibus libero, unde a nesciunt
+              repellendus!</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_7.jpg" class="image-popup fh5co-board-img"><img src="../images/img_7.jpg"
+                                                                                   alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Necessitatibus distinctio eos ipsam cum hic temporibus assumenda deleniti,
+              soluta.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_8.jpg" class="image-popup fh5co-board-img"><img src="../images/img_8.jpg"
+                                                                                   alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Debitis voluptatum est error nulla voluptate eum maiores animi quasi?</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_9.jpg" class="image-popup fh5co-board-img"><img src="../images/img_9.jpg"
+                                                                                   alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Maxime qui eius quisquam quidem quos unde consectetur accusamus adipisci!</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_21.jpg" class="image-popup fh5co-board-img"><img src="../images/img_21.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Deleniti aliquid, accusantium, consectetur harum eligendi vitae quaerat reiciendis
+              sit?</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_10.jpg" class="image-popup fh5co-board-img"><img src="../images/img_10.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Incidunt, eaque et. Et odio excepturi, eveniet facilis explicabo assumenda.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_11.jpg" class="image-popup fh5co-board-img"><img src="../images/img_11.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Laborum dolores nihil voluptates quas alias distinctio fugiat tempora sit.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_12.jpg" class="image-popup fh5co-board-img"><img src="../images/img_12.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Sit, quis nulla amet numquam fugit, in reiciendis laboriosam dolor.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_13.jpg" class="image-popup fh5co-board-img"><img src="../images/img_13.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Possimus explicabo voluptatem natus nisi similique ipsa repudiandae? Quibusdam,
+              fuga.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_14.jpg" class="image-popup fh5co-board-img"><img src="../images/img_14.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Magni repellendus iusto mollitia, quibusdam facilis incidunt. Sunt, repellat,
+              voluptatem.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_15.jpg" class="image-popup fh5co-board-img"><img src="../images/img_15.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Unde iure rerum cupiditate explicabo quam aut vel earum numquam.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_16.jpg" class="image-popup fh5co-board-img"><img src="../images/img_16.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Qui nisi error dolorum dolor delectus, alias doloremque perspiciatis nemo.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_18.jpg" class="image-popup fh5co-board-img"><img src="../images/img_18.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Neque porro vero cumque natus nam voluptatibus, ratione, commodi labore.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_17.jpg" class="image-popup fh5co-board-img"><img src="../images/img_17.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Quisquam quia totam, sit ea maxime sint sed excepturi quod.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_19.jpg" class="image-popup fh5co-board-img"><img src="../images/img_19.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Nesciunt non iste ex nemo sapiente eum, provident nam corporis.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_20.jpg" class="image-popup fh5co-board-img"><img src="../images/img_20.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Harum repellat labore est cum ipsa, nesciunt neque mollitia adipisci?</div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_22.jpg" class="image-popup fh5co-board-img"><img src="../images/img_22.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Quos repellendus repudiandae debitis reprehenderit cupiditate cumque accusamus
+              exercitationem, harum.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_23.jpg" class="image-popup fh5co-board-img"><img src="../images/img_23.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Sunt numquam itaque delectus, dignissimos dolorem obcaecati vel, atque eos.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_24.jpg" class="image-popup fh5co-board-img"><img src="../images/img_24.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam
+              placeat.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_25.jpg" class="image-popup fh5co-board-img"><img src="../images/img_25.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Quos repellendus repudiandae debitis reprehenderit cupiditate cumque accusamus
+              exercitationem, harum.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_26.jpg" class="image-popup fh5co-board-img"><img src="../images/img_26.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Sunt numquam itaque delectus, dignissimos dolorem obcaecati vel, atque eos.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_27.jpg" class="image-popup fh5co-board-img"><img src="../images/img_27.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam
+              placeat.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_28.jpg" class="image-popup fh5co-board-img"><img src="../images/img_28.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam
+              placeat.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_29.jpg" class="image-popup fh5co-board-img"><img src="../images/img_29.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam
+              placeat.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_30.jpg" class="image-popup fh5co-board-img"><img src="../images/img_30.jpg"
+                                                                                    alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc">Adipisci consequuntur ipsa fugit perspiciatis eligendi. Omnis blanditiis, totam
+              placeat.</div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_1.jpg" class="image-popup fh5co-board-img"
+               title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img
+                    src="../images/img_1.jpg" alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc"><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
+              eos?</a></div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="animate-box">
+            <a href="../images/img_1.jpg" class="image-popup fh5co-board-img"
+               title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img
+                    src="../images/img_1.jpg" alt="Free HTML5 Bootstrap template"></a>
+            <div class="fh5co-desc"><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,
+              eos?</a></div>
+          </div>
+        </div>
+
+
+        <!--右边部分-->
+        <div class="right-card">
+          <!--card-->
+          <div class="list-card">
+            <ul class="list-group">
+              <a href="" class="list-group-item"><img src="../icons/收藏.svg" alt="" class="card-icon"><span
+                      class="badge">14</span> 我的收藏</a>
+              <a href="" class="list-group-item"><img src="../icons/常见问题.svg" alt="" class="card-icon"><span
+                      class="badge">14</span>
+                我关注的问题</a>
+              <a href="" class="list-group-item"><img src="../icons/信息.svg" alt="" class="card-icon" height="20px"
+                                                      width="20px"><span> 社区服务中心</span></a>
+              <a href="" class="list-group-item"><img src="../icons/版权.svg" alt=""
+                                                      class="card-icon"><span> 版权服务中心</span></a>
+              <a href="" class="list-group-item"><img src="../icons/编辑.svg" alt=""
+                                                      class="card-icon"><span> 公共编辑动态</span></a>
+            </ul>
+          </div>
+          <!--右侧页脚-->
+          <footer class="card-footer">
+            <a href="">Seek 猫</a>
+            <span>·</span>
+            <a href="">千寻指南</a>
+            <span>·</span>
+            <a href="">千寻协议</a>
+            <span>·</span>
+            <a href="">隐私政策</a>
+            <br>
+            <a href="">应用</a>
+            <span>·</span>
+            <a href="">工作</a>
+            <span>·</span>
+            <a href="">申请开通千寻机构号</a>
+            <br>
+            <a href="">侵权举报</a>
+            <span>·</span>
+            <a href="">网上有害信息举报专区</a>
+            <br>
+            <span>违法和不良信息举报：010-82716601</span>
+            <br>
+            <a href="">儿童色情信息举报专区</a>
+            <br>
+            <a href="">联系我们</a>
+            <span>&copy;2018 千寻</span>
+
+          </footer>
+
+        </div>
+      </div>
+    </div>
+
+    <!--页脚-->
+    <footer id="fh5co-footer">
+      <div class="container">
+        <div class="row-padded">
+          <div class="col-md-12 text-center">
+            <p class="fh5co-social-icons">
+              <a href="#"><i class="icon-twitter"></i></a>
+              <a href="#"><i class="icon-facebook"></i></a>
+              <a href="#"><i class="icon-instagram"></i></a>
+              <a href="#"><i class="icon-dribbble"></i></a>
+              <a href="#"><i class="icon-youtube"></i></a>
+              <a href="https://github.com/tzz3/SeekMore"><i class="icon-github"></i></a>
+            </p>
+            <p>
+              <small>&copy; Power by 凌晨四点. <br> All Rights Reserved.</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- 提问弹窗 -->
+    <div class="box-pwd">
+      <form action="" id="form" method="post">
+        <button type="button" class="close-box " id="close">
+          <img src="../icons/关闭.svg" alt="" height="20px" width="20px">
+        </button>
+        <div class="h3 text-center">写下你的问题</div>
+        <div class="h5 text-center">描述精确的问题更易得到解答</div>
+
+        <div>
+          <input type="text" name="id" id="id" class="id" style="display: none"/>
+        </div>
+
+        <div class="box-th title-th">
+          <textarea name="title" class="q-title" form="form" id="title" cols="57" placeholder="问题标题"></textarea>
+        </div>
+
+
+        <div class="box-th">
+          <input type="password" name="topic" id="topic" class="topic" placeholder="添加话题"/>
+        </div>
+
+        <div style="margin-left: 15%;">问题描述(可选)：</div>
+        <div class="box-th title-th">
+          <textarea name="des" class="q-title" form="form" id="des" cols="57" placeholder="问题背景、条件等详细信息"></textarea>
+        </div>
+        <!--<div class="box-th">-->
+        <!--<input type="des" name="des" id="des" class="des" placeholder="问题背景、条件等详细信息"/>-->
+        <!--</div>-->
+        <div class="info-pwd" id="info-pwd">
+        </div>
+        <input type="submit" class="submit" id="submit" value="提交"/>
+      </form>
+    </div>
+    <div class="box-shadow"></div>
+
+
+    <!-- jQuery -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="../js/jquery.waypoints.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <!-- Salvattore -->
+    <script src="../js/salvattore.min.js"></script>
+    <!-- Main JS -->
+    <script src="../js/main.js"></script>
+
+
+</body>
+</html>

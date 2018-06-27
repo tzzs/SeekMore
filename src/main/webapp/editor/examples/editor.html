@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8"/>
+  <title>Simple example - Editor.md examples</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/editor.css"/>
+  <link rel="stylesheet" href="../css/editormd.css"/>
+  <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="../../css/bootstrap.min1.css"></script>
+</head>
+<body>
+<div id="layout">
+  //头部
+  <header class="editor-header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand"><strong>千寻</strong>&nbsp;&nbsp;写文章</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+          <ul class="nav navbar-nav navbar-right">
+            <div class="title-r">
+              <button class="btn btn-default">Submit</button>
+            </div>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+  </header>
+
+  <div class="question-img">
+    <img src="../images/图片.svg" alt="选择图片" height="40px" width="40px">
+    <!--<span>&nbsp;</span>-->
+  </div>
+
+  <input type="text" id="title" class="title-input center" placeholder="请输入标题">
+
+  <div id="test-editormd">
+                <textarea style="display:none;">[TOC]
+
+#### Disabled options
+
+- TeX (Based on KaTeX);
+- Emoji;
+- Task lists;
+- HTML tags decode;
+- Flowchart and Sequence Diagram;
+
+#### Editor.md directory
+
+    editor.md/
+            lib/
+            css/
+            scss/
+            tests/
+            fonts/
+            images/
+            plugins/
+            examples/
+            languages/
+            editormd.js
+            ...
+
+```html
+&lt;!-- English --&gt;
+&lt;script src="../dist/js/languages/en.js"&gt;&lt;/script&gt;
+
+&lt;!-- 繁體中文 --&gt;
+&lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
+```
+</textarea>
+  </div>
+  <div class="footer">
+    <input type="submit" class="btn btn-default btn-s" id="">
+    <input id="submit" type="button" name="submit" value="Submit" class="btn btn-default" style="margin-left: 5%;"/>
+  </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="../editormd.min.js"></script>
+<script type="text/javascript">
+    var testEditor;
+    document.getElementById("submit").onclick = function () {
+        let htmlCode = document.getElementsByClassName("editormd-preview-container")[0].innerHTML;
+        let mdCode = testEditor.getMarkdown();
+        console.log(htmlCode);
+    };
+
+    $(function () {
+        testEditor = editormd("test-editormd", {
+            width: "70%",
+            height: "500px",
+            syncScrolling: "single",
+            path: "../lib/",
+            watch: false,                // 关闭实时预览
+            imageUpload: true,
+            imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL: "/utils/imgUpload",
+            /*
+            上传的后台只需要返回一个 JSON 数据，结构如下：
+            {
+               success : 0 | 1,           // 0 表示上传失败，1 表示上传成功
+               message : "提示的信息，上传成功或上传失败及错误信息等。",
+               url     : "图片地址"        // 上传成功时才返回
+            }
+            */
+        });
+    });
+</script>
+</body>
+</html>
