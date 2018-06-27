@@ -1,4 +1,4 @@
-package com.zhihu.book.test;
+package com.zhihu.test;
 
 import org.apache.shiro.crypto.hash.Md5Hash;
 

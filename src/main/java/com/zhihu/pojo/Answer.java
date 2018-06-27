@@ -1,4 +1,4 @@
-package com.zhihu.book.pojo;
+package com.zhihu.pojo;
 
 import javax.persistence.*;
 import java.util.List;
@@ -15,6 +15,8 @@ public class Answer {
 
     private String aContent;
 
+    private int likeNum;
+
     //回答
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
     private List<Answer> answers;
@@ -24,8 +26,6 @@ public class Answer {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "answers")
     private List<Comment> comments;
-
-    private int like;
 
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
     private User collect;

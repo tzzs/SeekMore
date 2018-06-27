@@ -1,4 +1,4 @@
-package com.zhihu.book.pojo;
+package com.zhihu.pojo;
 
 import javax.persistence.*;
 
@@ -14,7 +14,7 @@ public class Comment {
 
     private String cComment;
 
-    private int like;
+    private int likeNum;
 
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
     private User user;

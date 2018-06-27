@@ -1,4 +1,4 @@
-package com.zhihu.book.pojo;
+package com.zhihu.pojo;
 
 /**
  * @author tzz

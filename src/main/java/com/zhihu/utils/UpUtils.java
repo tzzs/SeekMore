@@ -1,4 +1,4 @@
-package com.zhihu.book.utils;
+package com.zhihu.utils;
 
 import org.springframework.web.multipart.MultipartFile;
 
