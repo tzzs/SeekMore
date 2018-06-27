@@ -1,13 +1,12 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="book:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/book_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/target/book</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="book" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Spring-4.3.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.2.5.RELEASE" />
@@ -69,7 +68,9 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.4" />
           <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.8.3" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jasper:9.0.8" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-servlet-api:9.0.8" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:9.0.8" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jsp-api:9.0.8" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-el-api:9.0.8" />
           <element id="library" level="project" name="Maven: org.eclipse.jdt:ecj:3.13.102" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jasper-el:9.0.8" />
@@ -77,10 +78,14 @@
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util-scan:9.0.8" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-util:9.0.8" />
           <element id="library" level="project" name="Maven: tomcat:jasper-runtime:5.5.23" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.4" />
           <element id="library" level="project" name="Maven: commons-el:commons-el:1.0" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.glassfish.web:jstl-impl:1.2" />
         </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/book/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="book/web/Web" />
     </root>
