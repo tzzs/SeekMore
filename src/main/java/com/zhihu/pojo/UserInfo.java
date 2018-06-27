@@ -26,6 +26,7 @@ public class UserInfo {
 
     private String userPhone;
 
+    @Column(length = 2000)
     private String userIntro;
   @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
     private Role userRole;
