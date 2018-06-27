@@ -8,6 +8,8 @@ import java.util.List;
  * @Package com.zhihu.book.pojo
  * @Name Question
  */
+@Entity
+@Table(name = "question")
 public class Question {
 
     @Id

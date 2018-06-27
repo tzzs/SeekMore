@@ -1,9 +1,6 @@
 package com.zhihu.pojo;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -11,6 +8,8 @@ import java.util.List;
  * @Package com.zhihu.book.pojo
  * @Name Role
  */
+@Entity
+@Table(name = "role")
 public class Role {
     @Id
     private String id;
