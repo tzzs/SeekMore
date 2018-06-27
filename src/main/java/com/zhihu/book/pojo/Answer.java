@@ -8,8 +8,6 @@ import java.util.List;
  * @Package com.zhihu.book.pojo
  * @Name Answer
  */
-@Entity
-@Table(name = "answer")
 public class Answer {
 
     @Id
@@ -19,7 +17,7 @@ public class Answer {
 
     //回答
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
-    private Answer answers;
+    private List<Answer> answers;
 
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
     private User user;

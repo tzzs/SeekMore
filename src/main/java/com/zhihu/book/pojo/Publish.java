@@ -1,14 +1,15 @@
 package com.zhihu.book.pojo;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * @author tzz
  * @Package com.zhihu.book.pojo
  * @Name Publish
  */
-@Entity
-@Table(name = "publish")
 public class Publish {
 
     @Id
