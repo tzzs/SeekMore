@@ -26,7 +26,8 @@ public class UserInfo {
 
     private String userPhone;
 
-    @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
+    private String userIntro;
+  @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
     private Role userRole;
 
     public String getId() {
