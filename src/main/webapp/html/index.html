@@ -118,6 +118,7 @@
           <a class="navbar-brand" href="#"><strong>Seek More</strong></a>
         </div>
 
+        <!--上方标题栏-->
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
@@ -180,8 +181,8 @@
         <nav class="navbar navbar-default ">
 
 
-          <a href="" class="card-title a-title" onclick="open()"><img src="../icons/常见问题.svg" class="card-icon" alt="">
-            提问</a>
+          <div style="cursor: pointer" class="card-title a-title" onclick="addQuestion()"><img src="../icons/常见问题.svg" class="card-icon" alt="">
+            提问</div>
           <a href="" class="card-title a-title"><img src="../icons/查看回答.svg" class="card-icon" alt=""> 回答</a>
           <a href="" class="card-title a-title"><img src="../icons/填写日报.svg" class="card-icon" alt=""> 写文章</a>
           <a href="" class="card-title a-title"><img src="../icons/想法.svg" class="card-icon" alt=""> 写想法</a>
@@ -441,54 +442,7 @@
         </div>
 
 
-        <!--&lt;!&ndash;右边部分&ndash;&gt;-->
-        <!--<div class="right-card">-->
-        <!--&lt;!&ndash;card&ndash;&gt;-->
-        <!--<div class="list-card">-->
-        <!--<ul class="list-group">-->
-        <!--<a href="" class="list-group-item"><img src="../icons/收藏.svg" alt="" class="card-icon"><span-->
-        <!--class="badge">14</span> 我的收藏</a>-->
-        <!--<a href="" class="list-group-item"><img src="../icons/常见问题.svg" alt="" class="card-icon"><span-->
-        <!--class="badge">14</span>-->
-        <!--我关注的问题</a>-->
-        <!--<a href="" class="list-group-item"><img src="../icons/信息.svg" alt="" class="card-icon" height="20px"-->
-        <!--width="20px"><span> 社区服务中心</span></a>-->
-        <!--<a href="" class="list-group-item"><img src="../icons/版权.svg" alt=""-->
-        <!--class="card-icon"><span> 版权服务中心</span></a>-->
-        <!--<a href="" class="list-group-item"><img src="../icons/编辑.svg" alt=""-->
-        <!--class="card-icon"><span> 公共编辑动态</span></a>-->
-        <!--</ul>-->
-        <!--</div>-->
-        <!--&lt;!&ndash;右侧页脚&ndash;&gt;-->
-        <!--<footer class="card-footer">-->
-        <!--<a href="">Seek 猫</a>-->
-        <!--<span>·</span>-->
-        <!--<a href="">千寻指南</a>-->
-        <!--<span>·</span>-->
-        <!--<a href="">千寻协议</a>-->
-        <!--<span>·</span>-->
-        <!--<a href="">隐私政策</a>-->
-        <!--<br>-->
-        <!--<a href="">应用</a>-->
-        <!--<span>·</span>-->
-        <!--<a href="">工作</a>-->
-        <!--<span>·</span>-->
-        <!--<a href="">申请开通千寻机构号</a>-->
-        <!--<br>-->
-        <!--<a href="">侵权举报</a>-->
-        <!--<span>·</span>-->
-        <!--<a href="">网上有害信息举报专区</a>-->
-        <!--<br>-->
-        <!--<span>违法和不良信息举报：010-82716601</span>-->
-        <!--<br>-->
-        <!--<a href="">儿童色情信息举报专区</a>-->
-        <!--<br>-->
-        <!--<a href="">联系我们</a>-->
-        <!--<span>&copy;2018 千寻</span>-->
 
-        <!--</footer>-->
-
-        <!--</div>-->
       </div>
     </div>
 
@@ -565,9 +519,9 @@
     <!-- 提问弹窗 -->
     <div class="box-pwd">
       <form action="" id="form" method="post">
-        <button type="button" class="close-box " id="close">
-          <img src="../icons/关闭.svg" alt="" height="20px" width="20px">
-        </button>
+        <div class="close-box" style="cursor: pointer">
+          <img src="../icons/关闭.svg" onclick="close_box()" alt="X" height="20px" width="20px">
+        </div>
         <div class="h3 text-center">写下你的问题</div>
         <div class="h5 text-center">描述精确的问题更易得到解答</div>
 
@@ -581,7 +535,7 @@
 
 
         <div class="box-th">
-          <input type="password" name="topic" id="topic" class="topic" placeholder="添加话题"/>
+          <input type="text" name="topic" id="topic" class="topic" placeholder="添加话题"/>
         </div>
 
         <div style="margin-left: 15%;">问题描述(可选)：</div>

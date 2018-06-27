@@ -16,8 +16,6 @@ function load() {
                     "              </a></div>\n" +
                     "          </div>\n" +
                     "        </div>";
-                // console.log(html);
-                // console.log(index);
                 console.log($("#fh5co-board").children());
                 $("#fh5co-board div")[index].insertAdjacentHTML("beforeend", html);
             }
@@ -50,12 +48,30 @@ function search(e) {
     })
 }
 
+function close_box() {
+    $(".box-pwd").css({
+        "display": "none"
+    });
 
-function open() {
+    $(".box-shadow").css({
+        "display": "none"
+    });
+
+    /* 清空残留数据 */
+    $("#id").val("");
+    $("#title").val("");
+    $("#topic").val("");
+    $("#des").val("");
+    $(".submit").removeClass("add_submit").removeClass("update_submit");
+    $("#form").attr("action", "#");
+}
+
+
+function addQuestion() {
     console.log("123");
     if ($(".box-pwd").css("display") === 'none') {
 
-        $(".box-shadow").css({
+        $(".box-pwd").css({
             "display": "block"
         });
 
