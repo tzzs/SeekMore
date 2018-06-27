@@ -29,7 +29,6 @@ public class User {
     private List<Answer> answers;
 
 
-
     //提问
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "user")
     private List<Question> questions;
