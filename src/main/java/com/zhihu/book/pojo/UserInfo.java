@@ -7,6 +7,8 @@ import javax.persistence.*;
  * @Package com.zhihu.book.pojo
  * @Name UserInfo
  */
+@Entity
+@Table(name = "userInfo")
 public class UserInfo {
 
     @Id

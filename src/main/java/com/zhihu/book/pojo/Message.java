@@ -1,5 +1,8 @@
 package com.zhihu.book.pojo;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * @author tzz
  */
