@@ -41,8 +41,9 @@ public class UserController {
             msg.setMsg("true");
             request.getSession().setAttribute("name", userInfo.getUserName());
             // UserInfo u = userDao.findByName(userInfo.getUserName());
-            // request.getSession().setAttribute("u", u);
-            // System.out.println(request.getSession().getAttribute("name"));
+            request.getSession().setAttribute("u", userinfo);
+            System.out.println(request.getSession().getAttribute("name"));
+            System.out.println(request.getSession().getAttribute("u"));
         }
         return msg;
     }

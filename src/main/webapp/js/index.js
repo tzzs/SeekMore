@@ -9,11 +9,12 @@ function load() {
                 console.log(data[d].qContent);
 
                 var index = d % 4 + 1;//列数
+
                 var html = "<div class=\"item\">\n" +
                     "          <div class=\"animate-box  bounceIn animated\">\n" +
-                    "            <a href=\"../images/img_" + 1 + ".jpg\" class=\"image-popup fh5co-board-img\"\n" +
+                    "            <a href=\"../images/img_" + d + ".jpg\" class=\"image-popup fh5co-board-img\"\n" +
                     "               title=\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?\"><img\n" +
-                    "                    src=\"../images/img_" + 1 + ".jpg\" alt=\"Free HTML5 Bootstrap template\"></a>\n" +
+                    "                    src=\"../images/img_" + d + ".jpg\" alt=\"Free HTML5 Bootstrap template\"></a>\n" +
                     "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"\">" + data[d].qContent +
                     "              </a></div>\n" +
                     "          </div>\n" +
@@ -21,7 +22,7 @@ function load() {
                 console.log($("#fh5co-board").children());
                 console.log(html);
 
-                $("#fh5co-board").children()[d].insertAdjacentHTML("beforeend", html);
+                $("#fh5co-board").children()[3 - (d % 4)].insertAdjacentHTML("beforeend", html);
             }
         }
     })
@@ -80,7 +81,7 @@ function addQuestion() {
         });
 
         $("#submit").attr({
-            "value": "修改"
+            "value": "提交"
         });
 
         $("#submit").addClass("update_submit");
@@ -96,19 +97,17 @@ function addQuestion() {
 
         $(".submit").click(function (e) {
             e.preventDefault();
+            var title = document.getElementById("title").value;
+            var content = document.getElementById("des").value;
             $.ajax({
-                url: "${pageContext.request.contextPath}/books/updateBook",
+                url: "/questions/addQuestion",
                 type: "post",
                 dataType: "json",
                 async: false,
-                data: $("#form").serialize(),
+                data: {"title": title, "content": content},
                 success: function (data) {
+                    console.log(data.msg);
                     alert(data.msg);
-                    window.location.href = "${pageContext.request.contextPath}/books/findAll";
-                },
-                error: function (data) {
-                    alert(data.msg);
-                    window.location.href = "${pageContext.request.contextPath}/books/findAll";
                 }
             });
         });

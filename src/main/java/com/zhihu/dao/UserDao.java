@@ -12,4 +12,6 @@ public interface UserDao {
     void addUser(User user);
 
     UserInfo login(String userName, String userPassword);
+
+    User findByUiId(String id);
 }

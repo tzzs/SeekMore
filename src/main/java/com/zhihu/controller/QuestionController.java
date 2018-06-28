@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -29,11 +30,15 @@ public class QuestionController {
 
     @RequestMapping("/addQuestion")
     @ResponseBody
-    public Message addQuestion(String title,String conent) {
+    public Message addQuestion(String title, String content , HttpServletRequest request) {
         Message msg = new Message();
-
-        questionService.addQuestion();
-
+        try{
+            questionService.addQuestion(title,content,request);
+            msg.setMsg("添加完成");
+        }catch (Exception e){
+            e.printStackTrace();
+            msg.setMsg("添加失败");
+        }
         return msg;
     }
 

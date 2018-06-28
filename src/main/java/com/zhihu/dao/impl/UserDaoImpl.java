@@ -38,9 +38,16 @@ public class UserDaoImpl implements UserDao {
     @Override
     public UserInfo login(String userName, String userPassword) {
         String hql = "from UserInfo u where u.userName=:userName and u.userPassword=:userPassword";
-        System.out.println(hql+" "+userName+" "+userPassword);
-        UserInfo u =  sessionFactory.getCurrentSession().createQuery(hql,UserInfo.class).setParameter("userName",userName).setParameter("userPassword",userPassword).uniqueResult();
+        System.out.println(hql + " " + userName + " " + userPassword);
+        UserInfo u = sessionFactory.getCurrentSession().createQuery(hql, UserInfo.class).setParameter("userName", userName).setParameter("userPassword", userPassword).uniqueResult();
         System.out.println(u.toString());
         return u;
+    }
+
+    @Override
+    public User findByUiId(String id) {
+        System.out.println("ID:"+id);
+        String hql = "from User u where u.id=:id";
+        return sessionFactory.getCurrentSession().createQuery(hql, User.class).setParameter("id", id).uniqueResult();
     }
 }

@@ -37,7 +37,9 @@
   <div class="question-img">
     <!--<img src="../images/图片.svg" alt="选择图片" height="40px" width="40px">-->
     <img id="preview" style="float: left; margin-left :0;height: 200px;width: 400px;"/>
-    <input type="file" name="file" class="btn-default" id="input_file" style="float: right;color: #6a6a6a;background: #d0d1d2;" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"
+    <input type="file" name="file" class="btn-default" id="input_file"
+           style="float: right;color: #6a6a6a;background: #d0d1d2;"
+           accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"
            onchange="imgPreview(this)">
   </div>
 
@@ -46,36 +48,7 @@
   <div id="test-editormd">
                 <textarea style="display:none;">[TOC]
 
-#### Disabled options
-
-- TeX (Based on KaTeX);
-- Emoji;
-- Task lists;
-- HTML tags decode;
-- Flowchart and Sequence Diagram;
-
-#### Editor.md directory
-
-    editor.md/
-            lib/
-            css/
-            scss/
-            tests/
-            fonts/
-            images/
-            plugins/
-            examples/
-            languages/
-            editormd.js
-            ...
-
-```html
-&lt;!-- English --&gt;
-&lt;script src="../dist/js/languages/en.js"&gt;&lt;/script&gt;
-
-&lt;!-- 繁體中文 --&gt;
-&lt;script src="../dist/js/languages/zh-tw.js"&gt;&lt;/script&gt;
-```
+  输入问题描述
 </textarea>
   </div>
   <div class="footer">
@@ -89,17 +62,19 @@
 
     document.getElementById("submit").onclick = function () {
         var content = testEditor.getHTML();
-        var title = document.getElementById("title").val();
+        var title = document.getElementById("title").value;
         $.ajax({
-            url:"/questions/addQuestion",
-            type:"post",
-            data:{"title":title,"content":content},
-            async:false,
-            success:function (data) {
-
+            url: "/questions/addQuestion",
+            type: "post",
+            data: {"title": title, "content": content},
+            async: false,
+            success: function (data) {
+                console.log(data.msg);
+                alert(data.msg);
             }
         })
     };
+
     //显示图片
     function imgPreview(fileDom) {
         //判断是否支持FileReader
@@ -145,7 +120,7 @@
             imageUpload: true,
             imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
             imageUploadURL: "/utils/imgUpload",
-            saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
+            saveHTMLToTextarea: true,    // 保存 HTML 到 Textarea
             /*
             上传的后台只需要返回一个 JSON 数据，结构如下：
             {

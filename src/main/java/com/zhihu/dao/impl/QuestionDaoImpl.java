@@ -22,6 +22,11 @@ public class QuestionDaoImpl implements QuestionDao {
     @Override
     public List<Question> findAll() {
         String hql = "from Question q order by q.id";
-        return sessionFactory.getCurrentSession().createQuery(hql,Question.class).getResultList();
+        return sessionFactory.getCurrentSession().createQuery(hql, Question.class).getResultList();
+    }
+
+    @Override
+    public void addQuestion(Question question) {
+        sessionFactory.getCurrentSession().persist(question);
     }
 }
