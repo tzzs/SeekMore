@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author tzz
  * @Package com.zhihu.book.pojo
- * @Name Role
+ * @Name RoleDao
  */
 @Entity
 @Table(name = "role")
