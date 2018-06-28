@@ -1,5 +1,7 @@
 package com.zhihu.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -20,9 +22,11 @@ public class Question {
     private String qContent;
 
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
+    @JsonIgnore
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "answers")
+    @JsonIgnore
     private List<Answer> answers;
 
     public String getId() {

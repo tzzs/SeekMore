@@ -1,22 +1,27 @@
 function load() {
     $.ajax({
-        url: "/answers/findAll",
+        url: "/questions/findAll",
         type: "post",
         async: false,
         success: function (data) {
 
-            for (d in data) {
-                var index = d % 4;//列数
+            alert(data.length);
+            console.log(data.length);
+            for (var d = 0; d < data.length; d++) {
+                console.log(data[d].qContent);
+
+                var index = d % 4 + 1;//列数
                 var html = "<div class=\"item\">\n" +
                     "          <div class=\"animate-box  bounceIn animated\">\n" +
-                    "            <a href=\"../images/img_1.jpg\" class=\"image-popup fh5co-board-img\"\n" +
+                    "            <a href=\"../images/img_" + 1 + ".jpg\" class=\"image-popup fh5co-board-img\"\n" +
                     "               title=\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?\"><img\n" +
-                    "                    src=\"../images/img_1.jpg\" alt=\"Free HTML5 Bootstrap template\"></a>\n" +
-                    "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"\">" + data[d].aContent +
+                    "                    src=\"../images/img_" + 1 + ".jpg\" alt=\"Free HTML5 Bootstrap template\"></a>\n" +
+                    "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"\">" + data[d].qContent +
                     "              </a></div>\n" +
                     "          </div>\n" +
                     "        </div>";
-                console.log($("#fh5co-board").children());
+                // console.log($("#fh5co-board").children());
+                console.log(html);
                 $("#fh5co-board div")[index].insertAdjacentHTML("beforeend", html);
             }
         }

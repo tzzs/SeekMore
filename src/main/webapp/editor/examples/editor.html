@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-  <script src="../../css/bootstrap.min1.css"></script>
+  <!--<script src="../../css/bootstrap.min1.css"></script>-->
 </head>
 <body>
 <div id="layout">
@@ -25,7 +25,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             <div class="title-r">
-              <button class="btn btn-default">Submit</button>
+              <!--<button class="btn btn-default">Submit</button>-->
             </div>
 
           </ul>
@@ -35,8 +35,10 @@
   </header>
 
   <div class="question-img">
-    <img src="../images/图片.svg" alt="选择图片" height="40px" width="40px">
-    <!--<span>&nbsp;</span>-->
+    <!--<img src="../images/图片.svg" alt="选择图片" height="40px" width="40px">-->
+    <img id="preview" style="float: left; margin-left :0;height: 200px;width: 400px;"/>
+    <input type="file" name="file" class="btn-default" id="input_file" style="float: right;color: #6a6a6a;background: #d0d1d2;" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg"
+           onchange="imgPreview(this)">
   </div>
 
   <input type="text" id="title" class="title-input center" placeholder="请输入标题">
@@ -77,18 +79,46 @@
 </textarea>
   </div>
   <div class="footer">
-    <input type="submit" class="btn btn-default btn-s" id="">
+    <!--<input type="submit" class="btn btn-default btn-s" id="">-->
     <input id="submit" type="button" name="submit" value="Submit" class="btn btn-default" style="margin-left: 5%;"/>
   </div>
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="../editormd.min.js"></script>
 <script type="text/javascript">
+    //显示图片
+    function imgPreview(fileDom) {
+        //判断是否支持FileReader
+        if (window.FileReader) {
+            var reader = new FileReader();
+        } else {
+            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+        }
+        //获取文件
+        var file = fileDom.files[0];
+        var imageType = /^image\//;
+        //是否是图片
+        if (!imageType.test(file.type)) {
+            alert("请选择图片！");
+            return;
+        }
+        //读取完成
+        reader.onload = function (e) {
+            //获取图片dom
+            var img = document.getElementById("preview");
+            //图片路径设置为读取的图片
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
     var testEditor;
     document.getElementById("submit").onclick = function () {
-        let htmlCode = document.getElementsByClassName("editormd-preview-container")[0].innerHTML;
-        let mdCode = testEditor.getMarkdown();
-        console.log(htmlCode);
+        // var htmlCode = document.getElementsByClassName("editormd-preview-container")[0].innerHTML;
+        // var mdCode = testEditor.getMarkdown();
+        // alert(htmlCode);
+        // console.log(htmlCode);
+        alert(testEditor.getHTML());
     };
 
     $(function () {
@@ -101,6 +131,7 @@
             imageUpload: true,
             imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
             imageUploadURL: "/utils/imgUpload",
+            saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
             /*
             上传的后台只需要返回一个 JSON 数据，结构如下：
             {
@@ -111,6 +142,7 @@
             */
         });
     });
+
 </script>
 </body>
 </html>

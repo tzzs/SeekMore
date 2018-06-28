@@ -62,13 +62,13 @@ public class Answer {
         this.likeNum = likeNum;
     }
 
-    public Answer getAnswers() {
-        return answers;
-    }
-
-    public void setAnswers(Answer answers) {
-        this.answers = answers;
-    }
+    // public Question getQuestion() {
+    //     return question;
+    // }
+    //
+    // public void setQuestion(Question question) {
+    //     this.question = question;
+    // }
 
     public User getUser() {
         return user;

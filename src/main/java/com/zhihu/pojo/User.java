@@ -21,31 +21,44 @@ public class User {
     private UserInfo userInfo;
 
     //收藏
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "collect")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "collect")
     private List<Answer> collects;
 
     //回答
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Answer> answers;
 
 
     //提问
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Question> questions;
 
     //评论
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Comment> comments;
 
 
     //发布
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "publisher")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "publisher")
     private List<Publish> publishes;
 
     //接收
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "reciever")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "reciever")
     private List<Publish> recieves;
 
+    public User(){
+
+    }
+
+    public User(String id, List<Answer> collects, List<Answer> answers, List<Question> questions, List<Comment> comments, List<Publish> publishes, List<Publish> recieves) {
+        this.id = id;
+        this.collects = collects;
+        this.answers = answers;
+        this.questions = questions;
+        this.comments = comments;
+        this.publishes = publishes;
+        this.recieves = recieves;
+    }
 
     public String getId() {
         return id;

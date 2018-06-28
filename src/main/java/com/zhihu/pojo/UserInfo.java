@@ -8,7 +8,7 @@ import javax.persistence.*;
  * @Name UserInfo
  */
 @Entity
-@Table(name = "userInfo")
+@Table(name = "userInfo", uniqueConstraints = {@UniqueConstraint(columnNames = {"userName"})})
 public class UserInfo {
 
     @Id
@@ -94,5 +94,19 @@ public class UserInfo {
 
     public void setUserRole(Role userRole) {
         this.userRole = userRole;
+    }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "id='" + id + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userSex='" + userSex + '\'' +
+                ", userIcon='" + userIcon + '\'' +
+                ", userEmail='" + userEmail + '\'' +
+                ", userPhone='" + userPhone + '\'' +
+                ", userIntro='" + userIntro + '\'' +
+                '}';
     }
 }
