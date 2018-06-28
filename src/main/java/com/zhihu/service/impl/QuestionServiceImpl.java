@@ -24,4 +24,9 @@ public class QuestionServiceImpl implements QuestionService {
     public List<Question> findAll() {
         return questionDao.findAll();
     }
+
+    @Override
+    public void addQuestion() {
+
+    }
 }

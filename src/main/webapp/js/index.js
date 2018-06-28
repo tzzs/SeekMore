@@ -4,8 +4,6 @@ function load() {
         type: "post",
         async: false,
         success: function (data) {
-
-            alert(data.length);
             console.log(data.length);
             for (var d = 0; d < data.length; d++) {
                 console.log(data[d].qContent);
@@ -20,9 +18,10 @@ function load() {
                     "              </a></div>\n" +
                     "          </div>\n" +
                     "        </div>";
-                // console.log($("#fh5co-board").children());
+                console.log($("#fh5co-board").children());
                 console.log(html);
-                $("#fh5co-board div")[index].insertAdjacentHTML("beforeend", html);
+
+                $("#fh5co-board").children()[d].insertAdjacentHTML("beforeend", html);
             }
         }
     })

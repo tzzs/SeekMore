@@ -1,5 +1,6 @@
 package com.zhihu.controller;
 
+import com.zhihu.pojo.Message;
 import com.zhihu.pojo.Question;
 import com.zhihu.service.QuestionService;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,18 @@ public class QuestionController {
 
     @RequestMapping("/findAll")
     @ResponseBody
-    public List<Question> findAll(){
+    public List<Question> findAll() {
         return questionService.findAll();
     }
+
+    @RequestMapping("/addQuestion")
+    @ResponseBody
+    public Message addQuestion(String title,String conent) {
+        Message msg = new Message();
+
+        questionService.addQuestion();
+
+        return msg;
+    }
+
 }
