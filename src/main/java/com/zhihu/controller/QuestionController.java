@@ -42,4 +42,12 @@ public class QuestionController {
         return msg;
     }
 
+
+    @RequestMapping("/findByLike")
+    @ResponseBody
+    public List<Question> findByLike(String qTitle){
+        System.out.println("qTitle:"+qTitle);
+        return questionService.findByLike(qTitle);
+    }
+
 }

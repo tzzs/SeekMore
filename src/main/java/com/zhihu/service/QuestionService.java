@@ -12,4 +12,5 @@ public interface QuestionService {
     void addQuestion(String title, String content, HttpServletRequest request);
 
 
+    List<Question> findByLike(String qTitle);
 }

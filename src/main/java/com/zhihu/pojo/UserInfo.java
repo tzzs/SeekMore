@@ -32,6 +32,14 @@ public class UserInfo {
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
     private Role userRole;
 
+    public String getUserIntro() {
+        return userIntro;
+    }
+
+    public void setUserIntro(String userIntro) {
+        this.userIntro = userIntro;
+    }
+
     public String getId() {
         return id;
     }

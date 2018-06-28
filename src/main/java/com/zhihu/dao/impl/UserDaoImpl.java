@@ -1,12 +1,14 @@
 package com.zhihu.dao.impl;
 
 import com.zhihu.dao.UserDao;
+import com.zhihu.pojo.Publish;
 import com.zhihu.pojo.User;
 import com.zhihu.pojo.UserInfo;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author tzz
@@ -49,5 +51,39 @@ public class UserDaoImpl implements UserDao {
         System.out.println("ID:"+id);
         String hql = "from User u where u.id=:id";
         return sessionFactory.getCurrentSession().createQuery(hql, User.class).setParameter("id", id).uniqueResult();
+    }
+
+
+
+
+    @Override
+    public void updatePasw(UserInfo user) {
+        sessionFactory.getCurrentSession().merge(user);
+    }
+
+    @Override
+    public UserInfo findById(String id1) {
+        String hql="from UserInfo u where u.id=:id1";
+
+        return sessionFactory.getCurrentSession().createQuery(hql,UserInfo.class).setParameter("id1",id1).uniqueResult();
+    }
+
+    @Override
+    public void updakteUser(UserInfo user)  {
+        sessionFactory.getCurrentSession().merge(user);
+    }
+
+    @Override
+    public List<Publish> findMessge(String id) {
+        String hql="from Publish p where p.reciever.id=:id";
+
+        return sessionFactory.getCurrentSession().createQuery(hql,Publish.class).setParameter("id",id).getResultList();
+    }
+
+    @Override
+    public UserInfo findPublish(User publisher) {
+        String uid = publisher.getId();
+        String hql="from UserInfo u where u.id=:id";
+        return sessionFactory.getCurrentSession().createQuery(hql,UserInfo.class).setParameter("id",uid).uniqueResult();
     }
 }

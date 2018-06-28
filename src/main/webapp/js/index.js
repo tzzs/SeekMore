@@ -12,10 +12,10 @@ function load() {
 
                 var html = "<div class=\"item\">\n" +
                     "          <div class=\"animate-box  bounceIn animated\">\n" +
-                    "            <a href=\"../images/img_" + d + ".jpg\" class=\"image-popup fh5co-board-img\"\n" +
+                    "            <a href=\"/questions/find?id=" + data[d].id + "\" class=\"image-popup fh5co-board-img\"\n" +
                     "               title=\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?\"><img\n" +
-                    "                    src=\"../images/img_" + d + ".jpg\" alt=\"Free HTML5 Bootstrap template\"></a>\n" +
-                    "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"\">" + data[d].qContent +
+                    "                    src=\"../images/img_" + (d + 1) + ".jpg\" alt=\"No picture\"></a>\n" +
+                    "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"\">" + data[d].qTitle +
                     "              </a></div>\n" +
                     "          </div>\n" +
                     "        </div>";
@@ -29,26 +29,40 @@ function load() {
 }
 
 
-function search(e) {
-    e.preventDefault();
-    var content = $("#search-content").val();
+function search() {
+    var qTitle = $("#search-title").val();
+    console.log(qTitle);
     $.ajax({
-        url: "",
-        type: "json",
+        url: "/questions/findByLike",
+        type: "post",
         async: false,
-        data: {"content": content},
+        data: {"qTitle": qTitle},
         success: function (data) {
-            document.getElementById("items").innerHTML = "";
-            var html = "<div class=\"item\">\n" +
-                "          <div class=\"animate-box\">\n" +
-                "            <a href=\"../images/img_1.jpg\" class=\"image-popup fh5co-board-img\"\n" +
-                "               title=\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?\"><img\n" +
-                "                    src=\"../images/img_1.jpg\" alt=\"Free HTML5 Bootstrap template\"></a>\n" +
-                "            <div class=\"fh5co-desc\"><a href=\"\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo,\n" +
-                "              eos?</a></div>\n" +
-                "          </div>\n" +
-                "        </div>";
-            document.getElementById("items").insertAdjacentHTML("beforeend", html);
+            var c = $("#fh5co-board").children();
+
+            for (var i = 0; i < c.length; i++) {
+                console.log(c[i]);
+                c[i].innerHTML = "";
+            }
+            for (var d = 0; d < data.length; d++) {
+                console.log(data[d].qContent);
+
+                var index = d % 4 + 1;//列数
+
+                var html = "<div class=\"item\">\n" +
+                    "          <div class=\"animate-box  bounceIn animated\">\n" +
+                    "            <a href=\"/questions/find?id=" + data[d].id + "\" class=\"image-popup fh5co-board-img\"\n" +
+                    "               title=\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?\"><img\n" +
+                    "                    src=\"../images/img_" + (d + 1) + ".jpg\" alt=\"No picture\"></a>\n" +
+                    "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"\">" + data[d].qTitle +
+                    "              </a></div>\n" +
+                    "          </div>\n" +
+                    "        </div>";
+                console.log($("#fh5co-board").children());
+                console.log(html);
+
+                $("#fh5co-board").children()[3 - (d % 4)].insertAdjacentHTML("beforeend", html);
+            }
         }
     })
 }

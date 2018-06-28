@@ -29,4 +29,10 @@ public class QuestionDaoImpl implements QuestionDao {
     public void addQuestion(Question question) {
         sessionFactory.getCurrentSession().persist(question);
     }
+
+    @Override
+    public List<Question> findByLike(String qTitle) {
+        String hql = "from Question q where q.qTitle like :qTitle";
+        return sessionFactory.getCurrentSession().createQuery(hql, Question.class).setParameter("qTitle", "%" + qTitle + "%").getResultList();
+    }
 }

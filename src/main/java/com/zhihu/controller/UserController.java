@@ -5,9 +5,12 @@ import com.zhihu.pojo.Message;
 import com.zhihu.pojo.UserInfo;
 import com.zhihu.service.UserService;
 import com.zhihu.utils.sendSms;
+import net.sf.json.JSONArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -97,5 +100,62 @@ public class UserController {
             msg.setMsg("系统异常，注册失败");
         }
         return msg;
+    }
+
+    @RequestMapping("/findMessge")
+    public ModelAndView findMessge(HttpServletRequest request){
+        ModelAndView mav=new ModelAndView();
+        UserInfo user=(UserInfo) request.getSession().getAttribute("u");
+        JSONArray users=userService.findMessge(user.getId());
+        mav.setViewName("/html/userMessage.jsp");
+        mav.addObject("publishes",users);
+        return mav;
+    }
+
+
+    @RequestMapping("/checkPswd")
+    @ResponseBody
+    public Message checkPswd(String oldPassword,HttpServletRequest request){
+        Message msg=new Message();
+        System.out.println(oldPassword);
+        UserInfo user=(UserInfo) request.getSession().getAttribute("u");
+        System.out.println(user.getUserPassword());
+        try {
+            return userService.checkPswd(oldPassword,user);
+        }catch (Exception e){
+            return msg;
+        }
+    }
+
+    @RequestMapping("/updatePasw")
+    @ResponseBody
+    public Message updatePasw(String oldpassword,String password,String newpassword,HttpServletRequest request){
+        Message msg=new Message();
+        System.out.println(oldpassword);
+        UserInfo user=(UserInfo) request.getSession().getAttribute("u");
+        try {
+            return userService.updatePasw(oldpassword,password,newpassword,user);
+        }catch (Exception e){
+            e.printStackTrace();
+            msg.setMsg("操作异常");
+            return msg;
+        }
+    }
+
+    @RequestMapping("/updateUser")
+    @ResponseBody
+    public Message updateUser(UserInfo user, MultipartFile filedata, HttpServletRequest request){
+        Message msg=new Message();
+        UserInfo user1=(UserInfo) request.getSession().getAttribute("u");
+        user.setUserRole(user1.getUserRole());
+        user.setUserIcon(user1.getUserIcon());
+        try {
+            return userService.updateUser(user,filedata,request);
+//              return null;
+        }catch (Exception e){
+            e.printStackTrace();
+            msg.setMsg("修改信息失败，操作异常");
+            return msg;
+        }
     }
 }

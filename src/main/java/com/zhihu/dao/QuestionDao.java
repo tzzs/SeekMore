@@ -8,4 +8,6 @@ public interface QuestionDao {
     List<Question> findAll();
 
     void addQuestion(Question question);
+
+    List<Question> findByLike(String qTitle);
 }
