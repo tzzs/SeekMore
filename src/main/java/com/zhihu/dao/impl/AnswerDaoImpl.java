@@ -24,4 +24,10 @@ public class AnswerDaoImpl implements AnswerDao {
         String hql = "from Answer answer order by answer.id";
         return sessionFactory.getCurrentSession().createQuery(hql,Answer.class).getResultList();
     }
+
+    @Override
+    public List<Answer> findAnswer(String id) {
+        String hql = "from Answer a where a.answer_id=:id";
+        return sessionFactory.getCurrentSession().createQuery(hql,Answer.class).setParameter("id",id).getResultList();
+    }
 }

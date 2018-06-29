@@ -1,6 +1,8 @@
 package com.zhihu.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import java.util.List;
@@ -24,10 +26,13 @@ public class Answer {
     //回答
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
     @JsonIgnore
-    private Answer answers;
+    // @Column(nullable=true)
+    @NotFound(action = NotFoundAction.IGNORE)
+    private Question answers;
 
     @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
     @JsonIgnore
+    @NotFound(action = NotFoundAction.IGNORE)
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "answers")

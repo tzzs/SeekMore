@@ -24,4 +24,9 @@ public class AnswerServiceImpl implements AnswerService {
     public List<Answer> findAll() {
         return answerDao.findAll();
     }
+
+    @Override
+    public List<Answer> findAnswer(String id) {
+        return answerDao.findAnswer(id);
+    }
 }

@@ -7,4 +7,7 @@ import java.util.List;
 public interface AnswerService {
 
     List<Answer> findAll();
+
+    List<Answer> findAnswer(String id);
+
 }

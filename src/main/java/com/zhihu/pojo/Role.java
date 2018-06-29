@@ -16,7 +16,8 @@ public class Role {
 
     private String rRole;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "userRole")
+    //fetch = FetchType.LAZY,
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userRole")
     private List<UserInfo> userInfos;
 
     public String getId() {
@@ -41,5 +42,13 @@ public class Role {
 
     public void setUserInfos(List<UserInfo> userInfos) {
         this.userInfos = userInfos;
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id='" + id + '\'' +
+                ", rRole='" + rRole + '\'' +
+                '}';
     }
 }

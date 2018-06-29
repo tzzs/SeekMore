@@ -12,10 +12,10 @@ function load() {
 
                 var html = "<div class=\"item\">\n" +
                     "          <div class=\"animate-box  bounceIn animated\">\n" +
-                    "            <a href=\"/questions/find?id=" + data[d].id + "\" class=\"image-popup fh5co-board-img\"\n" +
+                    "            <a href=\"/questions/findQuestion2?id=" + data[d].id + "\" class=\"image-popup fh5co-board-img\"\n" +
                     "               title=\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?\"><img\n" +
                     "                    src=\"../images/img_" + (d + 1) + ".jpg\" alt=\"No picture\"></a>\n" +
-                    "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"\">" + data[d].qTitle +
+                    "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"/questions/findQuestion2?id=\"" + data[d].id + ">" + data[d].qTitle +
                     "              </a></div>\n" +
                     "          </div>\n" +
                     "        </div>";
@@ -23,6 +23,19 @@ function load() {
                 console.log(html);
 
                 $("#fh5co-board").children()[3 - (d % 4)].insertAdjacentHTML("beforeend", html);
+            }
+        }
+    })
+
+    $.ajax({
+        url: "/users/getRole",
+        type: "post",
+        async: false,
+        success: function (data) {
+            console.log("data:", data.msg);
+            if (data.msg === "false") {
+                // $("#manage-menu").attr("display", none);
+                $("#manage-menu").hide();
             }
         }
     })
@@ -51,10 +64,10 @@ function search() {
 
                 var html = "<div class=\"item\">\n" +
                     "          <div class=\"animate-box  bounceIn animated\">\n" +
-                    "            <a href=\"/questions/find?id=" + data[d].id + "\" class=\"image-popup fh5co-board-img\"\n" +
+                    "            <a href=\"/questions/findQuestion2?id=" + data[d].id + "\" class=\"image-popup fh5co-board-img\"\n" +
                     "               title=\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?\"><img\n" +
                     "                    src=\"../images/img_" + (d + 1) + ".jpg\" alt=\"No picture\"></a>\n" +
-                    "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"\">" + data[d].qTitle +
+                    "            <div class=\"fh5co-desc\" style=\"float:none;word-wrap:break-word\"><a href=\"/questions/findQuestion2?id=\"" + data[d].id + ">" + data[d].qTitle +
                     "              </a></div>\n" +
                     "          </div>\n" +
                     "        </div>";

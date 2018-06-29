@@ -78,7 +78,7 @@
         </div>
 
         <footer class="ace-card-footer">
-            <a class="btn btn-lg btn-block btn-thin btn-upper " href="#">返回首页</a>
+            <a class="btn btn-lg btn-block btn-thin btn-upper " href="${pageContext.request.contextPath}/html/index.html">返回首页</a>
         </footer>
     </article><!-- #ace-card -->
 

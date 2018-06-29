@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface AnswerDao {
     List<Answer> findAll();
+
+    List<Answer> findAnswer(String id);
 }

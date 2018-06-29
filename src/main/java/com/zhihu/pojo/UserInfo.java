@@ -29,7 +29,8 @@ public class UserInfo {
     @Column(length = 500)
     private String userIntro;
 
-    @ManyToOne(cascade = CascadeType.PERSIST, optional = false, fetch = FetchType.LAZY)
+    //, fetch = FetchType.LAZY
+    @ManyToOne(cascade = CascadeType.PERSIST, optional = false)
     private Role userRole;
 
     public String getUserIntro() {

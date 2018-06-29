@@ -293,7 +293,7 @@
             data: {"userPhone": userPhone, "authCode": authCode},
             success: function (data) {
                 if (data.msg === "true") {
-                    alert("注册成功，即将跳转主页");
+                    alert("默认密码为验证码,注册成功，即将跳转主页");
                     window.location.href = "/html/index.html";
                 } else {
                     alert(data.msg);

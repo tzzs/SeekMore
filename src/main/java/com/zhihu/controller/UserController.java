@@ -103,39 +103,39 @@ public class UserController {
     }
 
     @RequestMapping("/findMessge")
-    public ModelAndView findMessge(HttpServletRequest request){
-        ModelAndView mav=new ModelAndView();
-        UserInfo user=(UserInfo) request.getSession().getAttribute("u");
-        JSONArray users=userService.findMessge(user.getId());
+    public ModelAndView findMessge(HttpServletRequest request) {
+        ModelAndView mav = new ModelAndView();
+        UserInfo user = (UserInfo) request.getSession().getAttribute("u");
+        JSONArray users = userService.findMessge(user.getId());
         mav.setViewName("/html/userMessage.jsp");
-        mav.addObject("publishes",users);
+        mav.addObject("publishes", users);
         return mav;
     }
 
 
     @RequestMapping("/checkPswd")
     @ResponseBody
-    public Message checkPswd(String oldPassword,HttpServletRequest request){
-        Message msg=new Message();
+    public Message checkPswd(String oldPassword, HttpServletRequest request) {
+        Message msg = new Message();
         System.out.println(oldPassword);
-        UserInfo user=(UserInfo) request.getSession().getAttribute("u");
+        UserInfo user = (UserInfo) request.getSession().getAttribute("u");
         System.out.println(user.getUserPassword());
         try {
-            return userService.checkPswd(oldPassword,user);
-        }catch (Exception e){
+            return userService.checkPswd(oldPassword, user);
+        } catch (Exception e) {
             return msg;
         }
     }
 
     @RequestMapping("/updatePasw")
     @ResponseBody
-    public Message updatePasw(String oldpassword,String password,String newpassword,HttpServletRequest request){
-        Message msg=new Message();
+    public Message updatePasw(String oldpassword, String password, String newpassword, HttpServletRequest request) {
+        Message msg = new Message();
         System.out.println(oldpassword);
-        UserInfo user=(UserInfo) request.getSession().getAttribute("u");
+        UserInfo user = (UserInfo) request.getSession().getAttribute("u");
         try {
-            return userService.updatePasw(oldpassword,password,newpassword,user);
-        }catch (Exception e){
+            return userService.updatePasw(oldpassword, password, newpassword, user);
+        } catch (Exception e) {
             e.printStackTrace();
             msg.setMsg("操作异常");
             return msg;
@@ -144,18 +144,33 @@ public class UserController {
 
     @RequestMapping("/updateUser")
     @ResponseBody
-    public Message updateUser(UserInfo user, MultipartFile filedata, HttpServletRequest request){
-        Message msg=new Message();
-        UserInfo user1=(UserInfo) request.getSession().getAttribute("u");
+    public Message updateUser(UserInfo user, MultipartFile filedata, HttpServletRequest request) {
+        Message msg = new Message();
+        UserInfo user1 = (UserInfo) request.getSession().getAttribute("u");
         user.setUserRole(user1.getUserRole());
         user.setUserIcon(user1.getUserIcon());
         try {
-            return userService.updateUser(user,filedata,request);
+            return userService.updateUser(user, filedata, request);
 //              return null;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             msg.setMsg("修改信息失败，操作异常");
             return msg;
         }
     }
+
+    @RequestMapping("/getRole")
+    @ResponseBody
+    public Message getRole(HttpServletRequest request) {
+        Message msg = new Message();
+        UserInfo userInfo = (UserInfo) request.getSession().getAttribute("u");
+        System.out.println(userInfo.getUserRole().toString());
+        if (userInfo.getUserRole().getId().equals("1111")) {
+            msg.setMsg("false");
+        } else {
+            msg.setMsg("true");
+        }
+        return msg;
+    }
+
 }

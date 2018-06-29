@@ -55,4 +55,15 @@ public class QuestionServiceImpl implements QuestionService {
     public List<Question> findByLike(String qTitle) {
         return questionDao.findByLike(qTitle);
     }
+
+
+    @Override
+    public List<Question> findByLike2(String qName) {
+        return questionDao.findByLike2(qName);
+    }
+
+    @Override
+    public Question findQuestion(String id) {
+        return questionDao.findQuestion(id);
+    }
 }

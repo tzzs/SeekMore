@@ -35,4 +35,17 @@ public class QuestionDaoImpl implements QuestionDao {
         String hql = "from Question q where q.qTitle like :qTitle";
         return sessionFactory.getCurrentSession().createQuery(hql, Question.class).setParameter("qTitle", "%" + qTitle + "%").getResultList();
     }
+
+    @Override
+    public List<Question> findByLike2(String qName) {
+        String hql = "from Question q where q.qTitle like :qName";
+
+        return sessionFactory.getCurrentSession().createQuery(hql,Question.class).setParameter("qName","%"+qName+"%").getResultList();
+    }
+
+    @Override
+    public Question findQuestion(String id) {
+        String hql = "from Question q where q.id=:id";
+        return sessionFactory.getCurrentSession().createQuery(hql,Question.class).setParameter("id",id).uniqueResult();
+    }
 }

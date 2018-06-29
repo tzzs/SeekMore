@@ -13,4 +13,11 @@ public interface QuestionService {
 
 
     List<Question> findByLike(String qTitle);
+
+
+
+
+    List<Question> findByLike2(String qName);
+
+    Question findQuestion(String id);
 }

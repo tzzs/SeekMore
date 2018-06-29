@@ -28,4 +28,6 @@ public interface UserDao {
     List<Publish> findMessge(String id);
 
     UserInfo findPublish(User publisher);
+
+    User finduserName(String userName);
 }
