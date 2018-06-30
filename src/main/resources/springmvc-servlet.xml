@@ -26,6 +26,7 @@
     <mvc:resources location="/scss/" mapping="/scss/**"/>
     <mvc:resources location="/fonts5/" mapping="/fonts5/**"/>
     <mvc:resources location="/admin/" mapping="/admin/**"/>
+    <mvc:resources location="/answer/" mapping="/answer/**"/>
 
 
 

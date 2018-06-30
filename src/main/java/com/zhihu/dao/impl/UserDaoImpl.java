@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -16,6 +17,7 @@ import java.util.List;
  * @Name UserDaoImpl
  */
 @Repository
+@Transactional
 public class UserDaoImpl implements UserDao {
 
     @Resource

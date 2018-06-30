@@ -69,7 +69,7 @@ public class QuestionController {
     public ModelAndView findByLike2(String qName) {
         ModelAndView mav = new ModelAndView();
         List<Question> questions = questionService.findByLike2(qName);
-        mav.setViewName("/html/Answer.jsp");
+        mav.setViewName("/answer/html/Answer.jsp");
         mav.addObject("questions", questions);
         return mav;
     }
@@ -98,7 +98,7 @@ public class QuestionController {
             mav.addObject("answers", answers);
         }
         mav.addObject("question", question);
-        mav.setViewName("/html/Answer.jsp");
+        mav.setViewName("/answer/html/Answer.jsp");
         return mav;
     }
 

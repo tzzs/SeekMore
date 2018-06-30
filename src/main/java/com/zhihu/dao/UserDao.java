@@ -6,6 +6,7 @@ import com.zhihu.pojo.UserInfo;
 
 import java.util.List;
 
+
 public interface UserDao {
 
     UserInfo findByName(String userName);

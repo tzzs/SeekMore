@@ -61,10 +61,10 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="../css/styleIndex1.css">
     <!-- Modernizr JS -->
-    <script src="../js/modernizr-2.6.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
-    <script src="../js/modernizr-2.6.2.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/modernizr-2.6.2.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="../css/index1.css">
 
@@ -72,7 +72,7 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
-    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
 
     <script>
 
@@ -102,14 +102,7 @@
     <!-- Style Sheet-->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <%--<link rel="stylesheet" href="../css/style.css"/>--%>
-
-    <!--<link rel='stylesheet' id='bootstrap-css-css' href='../css/bootstrap5152.css?ver=1.0' type='text/css' media='all' />-->
-    <!--<link rel='stylesheet' id='responsive-css-css' href='../css/responsive5152.css?ver=1.0' type='text/css' media='all' />-->
-    <!--<link rel='stylesheet' id='custom-css-css' href='css/custom5152.html?ver=1.0' type='text/css' media='all' />-->
-    <!--<link rel='stylesheet' id='pretty-photo-css-css' href='js/prettyphoto/prettyPhotoaeb9.css?ver=3.1.4' type='text/css' media='all' />-->
-
-    <link rel='stylesheet' id='main-css-css' href='../css/main5152.css?ver=1.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='main-css-css' href='${pageContext.request.contextPath}/answer/css/main5152.css?ver=1.0' type='text/css' media='all'/>
 
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -140,18 +133,18 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active lr"><a href="${pageContext.request.contextPath}/html/index.html">首页 <span class="sr-only">(current)</span></a></li>
-                        <li class="lr"><a href="index.html" onclick="">发现</a></li>
-                        <li class="lr"><a href="index.html">话题</a></li>
+                        <li class="lr"><a href="${pageContext.request.contextPath}/html/index.html" onclick="">发现</a></li>
+                        <li class="lr"><a href="${pageContext.request.contextPath}/html/index.html">话题</a></li>
                     </ul>
                     <form class="navbar-form navbar-left">
                         <div class="form-group right-40" method="post"
                              action="${pageContext.request.contextPath}/question/findByLike">
                             <input type="text" class="form-control" placeholder="搜索你感兴趣的内容">
                             <button type="submit" class="btn btn-default">
-                                <img src="../icons/搜索.svg" alt="搜索" height="20px" width="20px">
+                                <img src="${pageContext.request.contextPath}/icons/搜索.svg" alt="搜索" height="20px" width="20px">
                             </button>
                         </div>
-                        <button type="submit" class="btn btn-primary"><a href="../editor/examples/editor.html"
+                        <button type="submit" class="btn btn-primary"><a href="${pageContext.request.contextPath}/editor/examples/editor.html"
                                                                          style="color: white;"
                                                                          class="">提问</a></button>
                     </form>
@@ -160,7 +153,7 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         <a class="navbar-brand header-img" href="#">
-                            <img alt="Brand" class="img-rounded" src="../icons/通知.svg" height="20px" width="20px">
+                            <img alt="Brand" class="img-rounded" src="${pageContext.request.contextPath}/icons/通知.svg" height="20px" width="20px">
                         </a>
 
                         <!--<a class="navbar-brand header-img" href="#">-->
@@ -169,7 +162,7 @@
 
                         <li class="dropdown">
                             <a class="dropdown-toggle header-img" href="#" data-toggle="dropdown" aria-haspopup="true">
-                                <img alt="Brand" class="img-rounded" id="userIcon" src="../images/img_2.jpg"
+                                <img alt="Brand" class="img-rounded" id="userIcon" src="${pageContext.request.contextPath}/images/img_2.jpg"
                                      height="25px" width="30px">
                             </a>
                             <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"-->
@@ -188,14 +181,6 @@
         </div>
     </nav>
 </div>
-<!-- End of Header -->
-
-<!-- End of Search Wrapper -->
-
-<!-- Start of Page Container -->
-<%--<div class="page-container">--%>
-<%--<div class="container">--%>
-<%--<div class="row">--%>
 
 
 <div id="fh5co-main">
@@ -213,12 +198,12 @@
 
 
                         <div style="cursor: pointer" class="card-title a-title" onclick="addQuestion()"><img
-                                src="../icons/常见问题.svg" class="card-icon" alt="">
+                                src="${pageContext.request.contextPath}/icons/常见问题.svg" class="card-icon" alt="">
                             提问
                         </div>
-                        <a href="" class="card-title a-title"><img src="../icons/查看回答.svg" class="card-icon" alt=""> 回答</a>
-                        <a href="" class="card-title a-title"><img src="../icons/填写日报.svg" class="card-icon" alt=""> 写文章</a>
-                        <a href="" class="card-title a-title"><img src="../icons/想法.svg" class="card-icon" alt="">
+                        <a href="" class="card-title a-title"><img src="${pageContext.request.contextPath}/icons/查看回答.svg" class="card-icon" alt=""> 回答</a>
+                        <a href="" class="card-title a-title"><img src="${pageContext.request.contextPath}/icons/填写日报.svg" class="card-icon" alt=""> 写文章</a>
+                        <a href="" class="card-title a-title"><img src="${pageContext.request.contextPath}/icons/想法.svg" class="card-icon" alt="">
                             写想法</a>
                         <a href="" class="card-title a-title"></a>
                     </nav>
@@ -228,7 +213,8 @@
                     <li><a href="#" title="View all posts in Server &amp; Database">Server &amp; Database</a> <span class="divider">/</span></li>
                     <li class="active">Integrating WordPress with Your Website</li>
                 </ul>--%>
-                <div class="QuestionHeader-content" style="width: 75%">
+                <div class="QuestionHeader-content" style="width: 98%; margin-left: 10px; border:solid 1px white;
+                border-width:1px 1px 1px 1px;background-color: #f0f0f0;border-radius: 5px">
                     <div class="QuenstionHeadr-main">
                     <span class="tags">
                             <strong>Tags:&nbsp;&nbsp;</strong><a href="#" rel="tag">basic</a>, <a href="#" rel="tag">setting</a>, <a
@@ -260,7 +246,7 @@
                 <div>
                     <div class="Sticky QuenstionHeadr-bottom">
                         <div class="QuenstionHeadr-inner">
-                            <div class="QuenstionButtonGruop">
+                            <div class="QuenstionButtonGruop" style="margin-top: 10px;margin-bottom: 10px; margin-left: 10px;">
                                 <button type="button" class="Button" id="Button">关注</button>
                                 <button type="button" class="btn-btn-primary" id="btn-btn-primary"
                                         data-toggle="collapse"
@@ -284,7 +270,7 @@
                 </div>
 
                 <form>
-                    <div id="comment-main" class="panel-collapse collapse">
+                    <div id="comment-main" class="panel-collapse collapse" style="margin-left: 10px;">
                         <div>
                             <label for="comment">回答</label>
                             <textarea class="span-comment" name="comment" id="comment" cols="50" rows="1"></textarea>
@@ -306,17 +292,11 @@
                 %>
 
                 <article class=" type-post format-standard hentry clearfix"
-                         style="background-color: whitesmoke;width: 70% ;border-style:outset ;">
-                    <%--<img src="${pageContext.request.contextPath}/&lt;%&ndash;images/<%=answer.getUser().getUserInfo().getUserIcon()%>&ndash;%&gt;">--%>
-
-                    <%--<a href="#">--%>
-                        <%--<img alt=""--%>
-                             <%--src="${pageContext.request.contextPath}/&lt;%&ndash;images/<%=answer.getUser().getUserInfo().getUserIcon()%>&ndash;%&gt;;r=G"--%>
-                             <%--class="avatar avatar-60 photo" height="60" width="60">--%>
-                    <%--</a>--%>
+                             style="width: 98%; margin-left: 10px;border:solid 1px white;border-width:1px 1px 1px 1px;background-color: #f0f0f0;border-radius: 5px">
 
                         <a href="#">
-                            <img alt="" src="http://0.gravatar.com/avatar/2df5eab0988aa5ff219476b1d27df755?s=60&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G" class="avatar avatar-60 photo" height="60" width="60">
+                            <%--<img alt="" src="http://0.gravatar.com/avatar/2df5eab0988aa5ff219476b1d27df755?s=60&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G" class="avatar avatar-60 photo" height="60" width="60">--%>
+                            <img alt="" src="${pageContext.request.contextPath}/images/img_10.jpg" class="avatar avatar-60 photo" height="60" width="60">
                         </a>
 
                     <div class="comment-meta">
@@ -347,10 +327,10 @@
                 </article>
 
 
-                <div class="like-btn">
+                <div class="like-btn" style="margin-left: 10px;margin-top: 10px">
 
                     <form id="like-it-form" action="#" method="post">
-                        <span class="like-it ">66</span>
+                        <span class="like-it " style="height: 28px;width: 50px;text-align: center;background-color: #dddddd">66</span>
                         <input type="hidden" name="post_id" value="99">
                         <input type="hidden" name="action" value="like_it">
 
@@ -372,7 +352,7 @@
 
 
                 <div id="collapse<%=index%>" class="panel-collapse collapse"
-                     style="background-color: whitesmoke;width: 70%">
+                     style="width: 98%; margin-left: 10px;background-color: #f0f0f0;border-radius: 5px;border:solid 1px white;border-width:1px 1px 1px 1px;">
                     <section id="comments">
                         <h3 id="comments-title">评论</h3>
 
@@ -395,7 +375,8 @@
                                     </a>--%>
 
                                     <a href="#">
-                                        <img alt="" src="http://1.gravatar.com/avatar/50a7625001317a58444a20ece817aeca?s=60&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G" class="avatar avatar-60 photo" height="60" width="60">
+                                        <%--<img alt="" src="http://1.gravatar.com/avatar/50a7625001317a58444a20ece817aeca?s=60&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G" class="avatar avatar-60 photo" height="60" width="60">--%>
+                                        <img alt="" src="${pageContext.request.contextPath}/images/img_1.jpg" class="avatar avatar-60 photo" height="60" width="60">
                                     </a>
 
                                     <div class="comment-meta">
@@ -431,7 +412,7 @@
                         %>
                         <div id="respond">
 
-                            <h3>你的评论</h3>
+                            <h3 style="">你的评论</h3>
 
                             <div class="cancel-comment-reply">
                                 <a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;">Click
@@ -474,19 +455,19 @@
 
         <!--右边部分-->
         <div class="right-card"
-             style="position: fixed;height: 30%; width: 20%;right:200px; top: 70px;  left: auto;  bottom: auto;">
+             style="position: fixed;height: 30%; width: 20%;right:200px; top: 70px;  left: 70%;  bottom: auto;">
             <div class="list-card">
                 <ul class="list-group">
-                    <a href="" class="list-group-item"><img src="../icons/收藏.svg" alt="" class="card-icon"><span
+                    <a href="" class="list-group-item"><img src="${pageContext.request.contextPath}/icons/收藏.svg" alt="" class="card-icon"><span
                             class="badge">14</span> 我的收藏</a>
-                    <a href="" class="list-group-item"><img src="../icons/常见问题.svg" alt="" class="card-icon"><span
+                    <a href="" class="list-group-item"><img src="${pageContext.request.contextPath}/icons/常见问题.svg" alt="" class="card-icon"><span
                             class="badge">14</span>
                         我关注的问题</a>
-                    <a href="" class="list-group-item"><img src="../icons/信息.svg" alt="" class="card-icon" height="20px"
+                    <a href="" class="list-group-item"><img src="${pageContext.request.contextPath}/icons/信息.svg" alt="" class="card-icon" height="20px"
                                                             width="20px"><span> 社区服务中心</span></a>
-                    <a href="" class="list-group-item"><img src="../icons/版权.svg" alt=""
+                    <a href="" class="list-group-item"><img src="${pageContext.request.contextPath}/icons/版权.svg" alt=""
                                                             class="card-icon"><span> 版权服务中心</span></a>
-                    <a href="" class="list-group-item"><img src="../icons/编辑.svg" alt=""
+                    <a href="" class="list-group-item"><img src="${pageContext.request.contextPath}/icons/编辑.svg" alt=""
                                                             class="card-icon"><span> 公共编辑动态</span></a>
                 </ul>
             </div>
@@ -548,7 +529,7 @@
         <div class="box-pwd">
             <form action="" id="form" method="post">
                 <div class="close-box" style="cursor: pointer">
-                    <img src="../icons/关闭.svg" onclick="close_box()" alt="X" height="20px" width="20px">
+                    <img src="${pageContext.request.contextPath}/icons/关闭.svg" onclick="close_box()" alt="X" height="20px" width="20px">
                 </div>
                 <div class="h3 text-center">写下你的问题</div>
                 <div class="h5 text-center">描述精确的问题更易得到解答</div>
@@ -584,19 +565,19 @@
 
 
         <!-- jQuery -->
-        <script src="../js/jquery.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
         <!-- jQuery Easing -->
-        <script src="../js/jquery.easing.1.3.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery.easing.1.3.js"></script>
         <!-- Bootstrap -->
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
         <!-- Waypoints -->
-        <script src="../js/jquery.waypoints.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery.waypoints.min.js"></script>
         <!-- Magnific Popup -->
-        <script src="../js/jquery.magnific-popup.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/jquery.magnific-popup.min.js"></script>
         <!-- Salvattore -->
-        <script src="../js/salvattore.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/salvattore.min.js"></script>
         <!-- Main JS -->
-        <script src="../js/main.js"></script>
+        <script src="${pageContext.request.contextPath}/js/main.js"></script>
         <!--end of sidebar-->
 
     </div>
@@ -627,10 +608,10 @@
             data: {aComment: aComment},
             async: false,
             success: function (data) {
-                alert(data.msg);
+                // alert(data.msg);
             }
         });
-    })
+    });
     //添加评论
     var thisValue =  $("#span8").value;
     $(".btn").click(function () {
@@ -643,7 +624,7 @@
             data: $("#form").serialize(),
             async: false,
             success: function (data) {
-                alert(data.msg);
+                // alert(data.msg);
                 window.location.reload();
             }
         })
